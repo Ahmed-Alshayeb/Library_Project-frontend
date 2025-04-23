@@ -1,0 +1,125 @@
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden ;
+}
+
+.mang{
+    width: 70%;
+    position: relative;
+    top: 50px;
+    left: 12%;
+}
+
+form{
+    margin-left: 19%;
+    width: 210%;
+    margin-bottom: 20px;
+}
+.border{
+    border: 1px solid blue;
+    border-radius: 10%;
+    width: 45%;
+    height: 670px;
+    margin-left: 30%;
+}
+
+.s1 input{
+    border-radius: 20px;
+    width: 12%;
+    margin-right: 5%;
+    padding-bottom: 1px;
+}
+
+.s2 input{
+    border-radius: 3px;
+    width: 30%;
+    margin-right: 5%; 
+}
+
+.s3 input{
+    border-radius: 3px;
+    width: 30%;
+    margin-right: 5%; 
+}
+
+.s4 input{
+    border-radius: 3px;
+    width: 30%;
+    margin-right: 5%; 
+}
+
+.s5 input {
+    border-radius: 3px;
+    width: 10%;
+}
+
+.s6 select{
+    border-radius: 3px;
+    width: 31%;
+    margin-right: 5%; 
+}
+
+.s7 input{
+    border-radius: 3px;
+    width: 30%;
+    margin-right: 5%;
+}
+
+
+
+.h1 {
+    color: #0040f0;
+    margin-right: 10%;
+}
+.h2{
+    color: #0040f0;
+    margin-right: 5%;
+}
+
+
+.h3{
+    color: #0040f0;
+    margin-right: 5%;
+}
+
+.h4{
+    color: #0040f0;
+    margin-right: 5%;
+}
+
+.h5{
+    color: #0040f0;
+    margin-right: 5%;
+}
+
+.h6{
+    color: #0040f0;
+    margin-right: 5%;
+}
+.h7{
+    color: #0040f0;
+    margin-right: 5%;
+}
+
+span{
+    color: #0040f0;
+}
+
+.btn
+{
+    text-align: center;
+    width: 31%;
+    height: 40px;
+    margin:40px 0;
+    background-color: white;
+    border: 2px solid #00AFF0;
+    color: #00AFF0;
+    cursor: pointer;
+}
+
+.btn:hover{
+        background-color:#7e7e7e62;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="css/signup.css">
+            <title>Sign up</title>
+            <style>
+                body{
+                    background-image: url("img/image.png");
+                }
+                </style>
+                <script>
+                    function val()
+                    {
+                    var pass = document.getElementById("password").value;
+                    var confirm = document.getElementById("confirmPass").value;
+                    if(pass !==confirm)
+                    {
+                        alert("Password is not match");
+                         return false;
+                    }
+
+                }
+                </script>
+        </head>
+        <body>
+                <div class="mang">
+                    <div class="border">
+                    <form class="s1" action="php/accounts.php" method="post">
+                        <h3 class="h1"> Name </h3>
+                        <input type="text" placeholder="first" name = "first" required>
+                        <input type="text" placeholder="last" name = "last" required>
+                    
+                    <div class="s2">
+                    <h3 class="h2"> Username </h3>
+                    <input type="text" placeholder="username" name="username" required>
+                    </div>
+                    <div class="s3">
+                        <h3 class="h3"> Password </h3>
+                        <input type="password" placeholder=" enter password " name = "password" id="password" required>
+                    </div>
+                    <div class="s4">
+                        <h3 class="h4"> Confirm Password </h3>
+                        <input type="password" placeholder=" confirm password " name = "confirmPass" id="confirmPass" required>
+                    </div>
+                    <div class="s5">
+                        <h3 class="h5"> Date of Birth </h3>
+                        <input type="date" name="DateOfBirth" required>
+
+                    </div>
+                    <div class="s6">
+                        <h3 class="h6"> Gender </h3>
+                        <select name = "gender" required> 
+                            <option value ="Male"> Male </option>
+                            <option value = "Female"> Female </option>
+                        </select>   
+                    </div>
+                    <div class="s7">
+                        <h3 class="h7">Phone Number</h3>
+                        <input type="text" placeholder="phone number" name="phone" required>
+                        </div>
+                        <div class="bottoms">
+                        <input type="submit" value="submit"  onclick="return val()" class="btn">
+                        <input type="reset" value="reset" class="btn">
+                        
+                        </div>
+
+                        
+                    </form>
+                    </div>
+                </div>
+        </body>
+    </html>

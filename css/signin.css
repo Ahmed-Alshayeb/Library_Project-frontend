@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.contant{
+    border: 2px solid #00b0f0;
+    border-radius: 10px;
+    width: 350px;
+    height: 460px;
+    position: absolute;
+    top: 20%;
+    left: 38%;
+}
+.login p{
+    font-size: 20px;
+    text-align: center;
+    color: #0040f0;
+}
+
+.choose{
+    padding: 10%;
+    text-align: center;
+    font-size: 20px;
+    color: #00AFF0;
+    position: relative;
+    top: 35px;
+}
+
+.input input[type="text" i] {
+    width: 75%;
+    height: 25px;
+    margin: 10px 0;
+    padding: 10px 0;
+    position: relative;
+    left: 13%;
+    top: 30px;
+    border-radius: 20px;
+    border: 3px solid #00AFF0;
+}
+
+.bottom .bt1{
+    text-align: center;
+    width: 31%;
+    height: 40px;
+    margin-left: 14%;
+    position: relative;
+    bottom: -65px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid #00AFF0;
+    color: #00AFF0;
+    cursor: pointer;
+}
+.bottom .bt1:hover{
+    background-color:#7e7e7e62;
+}
+.bottom .bt2{
+    text-align: center;
+    width: 31%;
+    height: 40px;
+    margin-left: 14%;
+    position: relative;
+    bottom: -65px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid #00AFF0;
+    color: #00AFF0;
+    cursor: pointer;
+}
+.bottom .bt2:hover{
+    background-color:#7e7e7e62;
+}

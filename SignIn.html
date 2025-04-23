@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signin.css">
+    <title>Sign in</title>
+    <style>
+        body{
+            background-image: url(img/image.png);
+        }
+        </style>
+</head>
+<body>
+    
+    <form action="php/SignIn.php" method="post">
+        <div class="contant">
+        <div class="login">
+            <p>Login</p>
+        </div>
+        <div class="input">
+            <input type="text" placeholder="Enter username" name="username" required>
+            <input type="password" placeholder="Enter password" name="password" required style=" width: 75%;  height: 25px;margin: 10px 0;padding: 10px 0;position: relative;left: 13%;top: 60px;border-radius: 20px; border: 3px solid #00AFF0;">
+
+        </div>
+        
+        <div class="choose">
+            <label for="ch">Remember me</label>
+            <input type="checkbox" id="ch">
+        </div>
+        <div class="bottom">
+            <input type="submit" value="login" class="bt1">
+            <input type=button onClick="parent.location='Signup.html'" value='Sign Up' class="bt2">
+        </div>
+    </div>
+    </form>
+</body>
+</html>
