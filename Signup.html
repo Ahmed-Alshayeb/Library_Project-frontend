@@ -1,73 +1,210 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <link rel="stylesheet" href="css/signup.css">
-            <title>Sign up</title>
-            <style>
-                body{
-                    background-image: url("img/image.png");
-                }
-                </style>
-                <script>
-                    function val()
-                    {
-                    var pass = document.getElementById("password").value;
-                    var confirm = document.getElementById("confirmPass").value;
-                    if(pass !==confirm)
-                    {
-                        alert("Password is not match");
-                         return false;
-                    }
-
-                }
-                </script>
-        </head>
-        <body>
-                <div class="mang">
-                    <div class="border">
-                    <form class="s1" action="php/accounts.php" method="post">
-                        <h3 class="h1"> Name </h3>
-                        <input type="text" placeholder="first" name = "first" required>
-                        <input type="text" placeholder="last" name = "last" required>
-                    
-                    <div class="s2">
-                    <h3 class="h2"> Username </h3>
-                    <input type="text" placeholder="username" name="username" required>
-                    </div>
-                    <div class="s3">
-                        <h3 class="h3"> Password </h3>
-                        <input type="password" placeholder=" enter password " name = "password" id="password" required>
-                    </div>
-                    <div class="s4">
-                        <h3 class="h4"> Confirm Password </h3>
-                        <input type="password" placeholder=" confirm password " name = "confirmPass" id="confirmPass" required>
-                    </div>
-                    <div class="s5">
-                        <h3 class="h5"> Date of Birth </h3>
-                        <input type="date" name="DateOfBirth" required>
-
-                    </div>
-                    <div class="s6">
-                        <h3 class="h6"> Gender </h3>
-                        <select name = "gender" required> 
-                            <option value ="Male"> Male </option>
-                            <option value = "Female"> Female </option>
-                        </select>   
-                    </div>
-                    <div class="s7">
-                        <h3 class="h7">Phone Number</h3>
-                        <input type="text" placeholder="phone number" name="phone" required>
-                        </div>
-                        <div class="bottoms">
-                        <input type="submit" value="submit"  onclick="return val()" class="btn">
-                        <input type="reset" value="reset" class="btn">
-                        
-                        </div>
-
-                        
-                    </form>
-                    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("img/image.png");
+            background-size: cover;
+        }
+        
+        .signup-container {
+            background-color: white;
+            width: 450px;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .signup-header h2 {
+            color: #3e4045;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #3e4045;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #00AFF0;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 175, 240, 0.2);
+        }
+        
+        .form-group.full-width {
+            width: 100%;
+        }
+        
+        .error-message {
+            color: #ff4444;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit {
+            background-color: #00AFF0;
+            color: white;
+            border: none;
+        }
+        
+        .btn-submit:hover {
+            background-color: #0095d9;
+        }
+        
+        .btn-reset {
+            background-color: white;
+            color: #00AFF0;
+            border: 1px solid #00AFF0;
+        }
+        
+        .btn-reset:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <script>
+        function validatePasswords() {
+            const pass = document.getElementById("password").value;
+            const confirmPass = document.getElementById("confirmPass").value;
+            const errorElement = document.getElementById("passwordError");
+            
+            if (pass !== confirmPass) {
+                errorElement.style.display = "block";
+                document.getElementById("confirmPass").style.borderColor = "#ff4444";
+                return false;
+            } else {
+                errorElement.style.display = "none";
+                document.getElementById("confirmPass").style.borderColor = "#ddd";
+                return true;
+            }
+        }
+        
+        document.getElementById("confirmPass").addEventListener("input", function() {
+            validatePasswords();
+        });
+    </script>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <h2>Create Account</h2>
+        </div>
+        <form class="signup-form" action="php/accounts.php" method="post" onsubmit="return validatePasswords()">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first">First Name</label>
+                    <input type="text" id="first" name="first" placeholder="First" required>
                 </div>
-        </body>
-    </html>
+                <div class="form-group">
+                    <label for="last">Last Name</label>
+                    <input type="text" id="last" name="last" placeholder="Last" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPass">Confirm Password</label>
+                <input type="password" id="confirmPass" name="confirmPass" placeholder="Confirm password" required>
+                <div class="error-message" id="passwordError">Passwords do not match</div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="DateOfBirth">Date of Birth</label>
+                    <input type="date" id="DateOfBirth" name="DateOfBirth" required>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn btn-submit">Submit</button>
+                <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
